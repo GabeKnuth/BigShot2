@@ -1,0 +1,1425 @@
+#config_version=5
+
+# Mission Pinball Framework machine configuration file for Big Shot
+
+# ASCII art headings generated from
+# http://patorjk.com/software/taag/#p=display&c=bash&f=Alligator&t=test
+
+# created by brian madden & gabe knuth
+
+# more information about our big shot conversion project here:
+# https://missionpinball.com/blog/category/big-shot-em-conversion/
+
+#        ::::::::      :::       :::   :::   ::::::::::
+#      :+:    :+:   :+: :+:    :+:+: :+:+:  :+:
+#     +:+         +:+   +:+  +:+ +:+:+ +:+ +:+
+#    :#:        +#++:++#++: +#+  +:+  +#+ +#++:++#
+#   +#+   +#+# +#+     +#+ +#+       +#+ +#+
+#  #+#    #+# #+#     #+# #+#       #+# #+#
+#  ########  ###     ### ###       ### ##########
+
+#        ::::::::  :::::::::: ::::::::::: :::    ::: :::::::::
+#      :+:    :+: :+:            :+:     :+:    :+: :+:    :+:
+#     +:+        +:+            +:+     +:+    +:+ +:+    +:+
+#    +#++:++#++ +#++:++#       +#+     +#+    +:+ +#++:++#+
+#          +#+ +#+            +#+     +#+    +#+ +#+
+#  #+#    #+# #+#            #+#     #+#    #+# #+#
+#  ########  ##########     ###      ########  ###
+
+machine:
+    # hz: 60
+  balls_installed: 1
+
+hardware:
+  platform: p_roc
+  driverboards: pdb
+
+game:
+  balls_per_game: 5
+  max_players: 2
+
+#scriptlets: classic_modern_switcher.classicmodern attract.attract
+    #game.game
+    #bonus.bonus
+
+# modes:
+# - base
+# - bonus
+# - tilt
+
+#lcd:
+#    width: 800
+#    height: 600
+#    title: big shot
+#    items:
+#        score
+#        player
+#        ball
+#        version
+#        title
+#        looprate
+#        mpf_load
+
+#        ::::::::  :::       ::: ::::::::::: ::::::::::: ::::::::  :::    ::: :::::::::: ::::::::
+#      :+:    :+: :+:       :+:     :+:         :+:    :+:    :+: :+:    :+: :+:       :+:    :+:
+#     +:+        +:+       +:+     +:+         +:+    +:+        +:+    +:+ +:+       +:+
+#    +#++:++#++ +#+  +:+  +#+     +#+         +#+    +#+        +#++:++#++ +#++:++#  +#++:++#++
+#          +#+ +#+ +#+#+ +#+     +#+         +#+    +#+        +#+    +#+ +#+              +#+
+#  #+#    #+#  #+#+# #+#+#      #+#         #+#    #+#    #+# #+#    #+# #+#       #+#    #+#
+#  ########    ###   ###   ###########     ###     ########  ###    ### ########## ########
+
+switches:
+# direct switches
+  s_flipperleft:
+    number: SD18
+    label: left flipper button
+    tags: flipper, player, leftflipper
+  s_flipperright:
+    number: SD17
+    label: right flipper button
+    tags: flipper, player, rightflipper
+  s_startbutton:
+    number: SD16
+    label: start button
+    tags: start, player
+  s_score_1p_10_0:
+    number: SD8
+    label: 1st player tens score - zero position
+    tags:
+  s_score_1p_10_5:
+    number: SD9
+    label: 1st player tens score - nine position
+    tags:
+  s_score_1p_100_0:
+    number: SD10
+    label: 1st player hundreds score - zero position
+    tags:
+  s_score_1p_100_9:
+    number: SD11
+    label: 1st player hundreds score - nine position
+    tags:
+  s_score_1p_1k_0:
+    number: SD12
+    label: 1st player thousands score - zero position
+    tags:
+  s_score_1p_1k_5:
+    number: SD13
+    label: 1st player thousands score - nine position
+    tags:
+  s_score_1p_10k_0:
+    number: SD14
+    label: 1st player ten thousands score - zero position
+    tags:
+  s_score_1p_10k_5:
+    number: SD15
+    label: 1st player ten ten thousands score - nine position
+    tags:
+  s_score_2p_10_0:
+    number: SD0
+    label: 2nd player tens score - zero position
+    tags:
+  s_score_2p_10_5:
+    number: SD1
+    label: 2nd player tens score - nine position
+    tags:
+  s_score_2p_100_0:
+    number: SD2
+    label: 2nd player hundreds score - zero position
+    tags:
+  s_score_2p_100_9:
+    number: SD3
+    label: 2nd player hundreds score - nine position
+    tags:
+  s_score_2p_1k_0:
+    number: SD4
+    label: 2nd player thousands score - zero position
+    tags:
+  s_score_2p_1k_5:
+    number: SD5
+    label: 2nd player thousands score - nine position
+    tags:
+  s_score_2p_10k_0:
+    number: SD6
+    label: 2nd player ten thousands score - zero position
+    tags:
+  s_score_2p_10k_5:
+    number: SD7
+    label: 2nd player ten thousands score - nine position
+    tags:
+  s_creditwheel_zero:
+    number: SD24
+    label: credit wheel - zero position
+    tags:
+  s_creditwheel_max:
+    number: SD25
+    label: credit wheel - max position
+    tags:
+  s_creditwheel_1plus:
+    number: SD26
+    label: credit wheel - greater than one/less than max position
+    tags:
+  s_tilt:
+    number: SD20
+    label: plumb bob tilt
+    tags: tilt
+  s_slamtilt:
+    number: SD27
+    label: slam tilt
+    tags: slam_tilt, nobroken
+    type: nc
+  s_classic_mode:
+    number: SD19
+    label: switches between modern (inactive) and classic (active) modes
+# removed to make room for classic mode switch. leaving here as a placeholder.
+#    credit1:
+#        number: SD19
+#        label: credit switch 1
+#        tags: nobroken, credit
+  s_coindoorclosed:
+    number: SD21
+    label: coin door switch
+    tags:
+# matrix switches
+  s_toplanemid:
+    number: 0/0
+    label: middle rollover top lanes
+    tags: balllive, eightball
+  s_toplaneleft:
+    number: 0/1
+    label: left rollover top lanes
+    tags: balllive
+  s_toplaneright:
+    number: 0/2
+    label: right rollover top lanes
+    tags: balllive
+  s_popbumper:
+    number: 0/3
+    label: pop bumper
+    tags: balllive
+  s_eightballholeeject:
+    number: 0/4
+    label: 8 ball center hole
+    tags: balllive, eightball, open_diverter
+  s_drain:
+    number: 0/5
+    label: trough enter
+    tags:
+  s_plungerlane:
+    number: 0/6
+    label: plunger lane switch
+    tags: plungerlane
+    type: nc
+  s_draineject:
+    number: 0/7
+    label: trough eject
+    tags:
+  s_drop15:
+    number: 1/0
+    label: right bank 15
+    tags: balllive
+  s_drop14:
+    number: 1/1
+    label: right bank 14
+    tags: balllive
+  s_drop13:
+    number: 1/2
+    label: right bank 13
+    tags: balllive
+  s_drop12:
+    number: 1/3
+    label: right bank 12
+    tags: balllive
+  s_drop11:
+    number: 1/4
+    label: right bank 11
+    tags: balllive
+  s_drop10:
+    number: 1/5
+    label: right bank 10
+    tags: balllive
+  s_midrtlane:
+    number: 1/6
+    label: middle right lane rollover
+    tags: balllive
+  s_drop9:
+    number: 1/7
+    label: right bank 9
+    tags: balllive
+  s_drop1:
+    number: 2/0
+    label: left bank 1
+    tags: balllive
+  s_drop2:
+    number: 2/1
+    label: left bank 2
+    tags: balllive
+  s_drop3:
+    number: 2/2
+    label: left bank 3
+    tags: balllive
+  s_drop4:
+    number: 2/3
+    label: left bank 4
+    tags: balllive
+  s_drop5:
+    number: 2/4
+    label: left bank 3
+    tags: balllive
+  s_drop6:
+    number: 2/5
+    label: left bank 2
+    tags: balllive
+  s_midltlane:
+    number: 2/6
+    label: middle left lane rollover
+    tags: balllive
+  s_drop7:
+    number: 2/7
+    label: left bank 1
+    tags: balllive
+  s_slingl:
+    number: 3/0
+    label: left slingshot
+    tags: sling, balllive
+  s_slingr:
+    number: 3/1
+    label: right slingshot
+    tags: sling, balllive
+  s_leftoutlane:
+    number: 3/2
+    label: left outlane
+    tags: earlydrain, balllive
+  s_leftinlane:
+    number: 3/3
+    label: left inlane
+    tags: balllive
+  s_rightoutlane:
+    number: 3/4
+    label: right outlane
+    tags: earlydrain, balllive
+  s_rightinlane:
+    number: 3/5
+    label: right inlane
+    tags: balllive
+  s_ltmidstandup:
+    number: 3/6
+    label: left middle target
+    tags: balllive
+  s_rtmidstandup:
+    number: 3/7
+    label: right middle target
+    tags: em_advance_hold
+  s_midltrubber:
+    number: 4/6
+    label: left middle lane behind rubber
+    tags: balllive
+  s_midrtrubber:
+    number: 4/7
+    label: right middle lane behind rubber
+    tags: balllive
+  s_behindsolids:
+    number: 4/2
+    label:
+    tags: balllive
+  s_behindstripes:
+    number: 4/3
+    label:
+    tags: balllive
+
+#        :::        ::::::::::: ::::::::  :::    ::: ::::::::::: ::::::::
+#       :+:            :+:    :+:    :+: :+:    :+:     :+:    :+:    :+:
+#      +:+            +:+    +:+        +:+    +:+     +:+    +:+
+#     +#+            +#+    :#:        +#++:++#++     +#+    +#++:++#++
+#    +#+            +#+    +#+   +#+# +#+    +#+     +#+           +#+
+#   #+#            #+#    #+#    #+# #+#    #+#     #+#    #+#    #+#
+#  ########## ########### ########  ###    ###     ###     ########
+
+lights:
+#### backbox
+
+  l_player2_1:
+    subtype: matrix
+    number: c-a3-b0-0:r-a3-b1-0
+    label: player 2, 1s digit
+    tags: player2
+  l_player1_1:
+    subtype: matrix
+    number: c-a3-b0-0:r-a3-b1-1
+    label: player 1, 1s digit
+    tags: player1
+  l_o_t:
+    subtype: matrix
+    number: c-a3-b0-0:r-a3-b1-2
+    label: behind letters o and t
+    tags: gi
+  l_match40:
+    subtype: matrix
+    number: c-a3-b0-0:r-a3-b1-3
+    label: match light 40
+    tags:
+  l_player2:
+    subtype: matrix
+    number: c-a3-b0-0:r-a3-b1-4
+    label: player 2, corner
+    tags:
+  l_player2_10:
+    subtype: matrix
+    number: c-a3-b0-1:r-a3-b1-0
+    label: player 2, 10s digit
+    tags: player2
+  l_player1_10:
+    subtype: matrix
+    number: c-a3-b0-1:r-a3-b1-1
+    label: player 1, 10s digit
+    tags: player1
+  l_gameover:
+    subtype: matrix
+    number: c-a3-b0-1:r-a3-b1-2
+    label: game over
+    tags:
+  l_match10:
+    subtype: matrix
+    number: c-a3-b0-1:r-a3-b1-3
+    label: match light 10
+    tags:
+  l_player1:
+    subtype: matrix
+    number: c-a3-b0-1:r-a3-b1-4
+    label: player 1, corner
+    tags:
+  l_player2_100:
+    subtype: matrix
+    number: c-a3-b0-2:r-a3-b1-0
+    label: player 2, 100s digit
+    tags: player2
+  l_player1_100:
+    subtype: matrix
+    number: c-a3-b0-2:r-a3-b1-1
+    label: player 1, 100s digit
+    tags: player1
+  l_match90:
+    subtype: matrix
+    number: c-a3-b0-2:r-a3-b1-2
+    label: match light 90
+    tags:
+  l_match00:
+    subtype: matrix
+    number: c-a3-b0-2:r-a3-b1-3
+    label: match light 00
+    tags:
+  l_bip2:
+    subtype: matrix
+    number: c-a3-b0-2:r-a3-b1-4
+    label: ball in play 2
+    tags:
+  l_player2_1k:
+    subtype: matrix
+    number: c-a3-b0-3:r-a3-b1-0
+    label: player 2, 1000s digit
+    tags: player2
+  l_player1_1k:
+    subtype: matrix
+    number: c-a3-b0-3:r-a3-b1-1
+    label: player 1, 1000s digit
+    tags: player1
+  l_match80:
+    subtype: matrix
+    number: c-a3-b0-3:r-a3-b1-2
+    label: match light 80
+    tags:
+  l_match20:
+    subtype: matrix
+    number: c-a3-b0-3:r-a3-b1-3
+    label: match light 20
+    tags:
+  l_bip4:
+    subtype: matrix
+    number: c-a3-b0-3:r-a3-b1-4
+    label: ball in play 4
+    tags:
+  l_player2_10k:
+    subtype: matrix
+    number: c-a3-b0-4:r-a3-b1-0
+    label: player 2, 10000s unit
+    tags: player2
+  l_player1_10k:
+    subtype: matrix
+    number: c-a3-b0-4:r-a3-b1-1
+    label: player 1, 10000s unit
+    tags: player1
+  l_match70:
+    subtype: matrix
+    number: c-a3-b0-4:r-a3-b1-2
+    label: match light 70
+    tags:
+  l_match30:
+    subtype: matrix
+    number: c-a3-b0-4:r-a3-b1-3
+    label: match light 30
+    tags:
+  l_bip1:
+    subtype: matrix
+    number: c-a3-b0-4:r-a3-b1-4
+    label: ball in play 1
+    tags:
+  l_rtbody:
+    subtype: matrix
+    number: c-a3-b0-5:r-a3-b1-0
+    label: right body
+    tags: gi
+  l_h:
+    subtype: matrix
+    number: c-a3-b0-5:r-a3-b1-1
+    label: behind letter h
+    tags: gi
+  l_match60:
+    subtype: matrix
+    number: c-a3-b0-5:r-a3-b1-2
+    label: match light 60
+    tags:
+  l_ltleg:
+    subtype: matrix
+    number: c-a3-b0-5:r-a3-b1-3
+    label: left leg
+    tags: gi
+  l_bip3:
+    subtype: matrix
+    number: c-a3-b0-5:r-a3-b1-4
+    label: ball in play 3
+    tags:
+  l_midbody2:
+    subtype: matrix
+    number: c-a3-b0-6:r-a3-b1-0
+    label: middle body 2
+    tags: gi
+  l_g_s:
+    subtype: matrix
+    number: c-a3-b0-6:r-a3-b1-1
+    label: behind g and s
+    tags: gi
+  l_match50:
+    subtype: matrix
+    number: c-a3-b0-6:r-a3-b1-2
+    label: match light 50
+    tags:
+  l_ltbody:
+    subtype: matrix
+    number: c-a3-b0-6:r-a3-b1-3
+    label: left body
+    tags: gi
+  l_bip5:
+    subtype: matrix
+    number: c-a3-b0-6:r-a3-b1-4
+    label: ball in play 5
+    tags:
+  l_guyshair:
+    subtype: matrix
+    number: c-a3-b0-7:r-a3-b1-0
+    label: guys hair
+    tags: gi
+  l_b_i:
+    subtype: matrix
+    number: c-a3-b0-7:r-a3-b1-1
+    label: behind letters b and i
+    tags: gi
+  l_tilt:
+    subtype: matrix
+    number: c-a3-b0-7:r-a3-b1-2
+    label: tilt
+    tags:
+  l_midbody1:
+    subtype: matrix
+    number: c-a3-b0-7:r-a3-b1-3
+    label: middle body 1
+    tags: gi
+  l_rtleg:
+    subtype: matrix
+    number: c-a3-b0-7:r-a3-b1-4
+    label: right leg
+    tags: gi
+
+#### playfield
+
+# bs rows - left in for some odd reason that i can't remember. i'll test
+# with them out later.
+
+  l_bspf1:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-5
+    label: bs light
+  l_bspf2:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-6
+    label: bs light
+  l_bspf3:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-7
+    label: bs light
+
+# real lights
+  l_bonus1k:
+    subtype: matrix
+    number: c-a2-b0-0:r-a2-b1-0
+    label: bonus 1,000
+    tags:
+  l_rtsling:
+    subtype: matrix
+    number: c-a2-b0-0:r-a2-b1-1
+    label: right slingshot
+    tags: gi
+  l_ltbank1:
+    subtype: matrix
+    number: c-a2-b0-0:r-a2-b1-2
+    label: bottom light under left bank of drop targets
+    tags: gi
+  l_ball1:
+    subtype: matrix
+    number: c-a2-b0-0:r-a2-b1-3
+    label: ball 1
+    tags:
+  l_ball8:
+    subtype: matrix
+    number: c-a2-b0-0:r-a2-b1-4
+    label: ball 8
+    tags:
+  l_bonus2k:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-0
+    label: bonus 2,000
+    tags:
+  l_rtmidlane:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-1
+    label: under right middle lane divider
+    tags: gi
+  l_ltbank2:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-2
+    label: top light under left bank of drop targets
+    tags: gi
+  l_ball2:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-3
+    label: ball 2
+    tags:
+  l_ball9:
+    subtype: matrix
+    number: c-a2-b0-1:r-a2-b1-4
+    label: ball 9
+    tags:
+  l_bonus3k:
+    subtype: matrix
+    number: c-a2-b0-2:r-a2-b1-0
+    label: bonus 3,000
+    tags:
+  l_rtmid1k:
+    subtype: matrix
+    number: c-a2-b0-2:r-a2-b1-1
+    label: right middle lane 1,000 light
+    tags:
+  l_topltlane:
+    subtype: matrix
+    number: c-a2-b0-2:r-a2-b1-2
+    label: top left lane
+    tags: gi
+  l_ball3:
+    subtype: matrix
+    number: c-a2-b0-2:r-a2-b1-3
+    label: ball 3
+    tags:
+  l_ball10:
+    subtype: matrix
+    number: c-a2-b0-2:r-a2-b1-4
+    label: ball 10
+    tags:
+  l_ltsling:
+    subtype: matrix
+    number: c-a2-b0-3:r-a2-b1-0
+    label: left slingshot
+    tags: gi
+  l_rtbank2:
+    subtype: matrix
+    number: c-a2-b0-3:r-a2-b1-1
+    label: top light under right bank of drop targets
+    tags: gi
+  l_topmid1:
+    subtype: matrix
+    number: c-a2-b0-3:r-a2-b1-2
+    label: left middle top lane
+    tags: gi
+  l_ball4:
+    subtype: matrix
+    number: c-a2-b0-3:r-a2-b1-3
+    label: ball 4
+    tags:
+  l_ball11:
+    subtype: matrix
+    number: c-a2-b0-3:r-a2-b1-4
+    label: ball 11
+    tags:
+  l_ltmidlane:
+    subtype: matrix
+    number: c-a2-b0-4:r-a2-b1-0
+    label: under left middle lane divider
+    tags: gi
+  l_rtbank1:
+    subtype: matrix
+    number: c-a2-b0-4:r-a2-b1-1
+    label: bottom light under right bank of drop targets
+    tags: gi
+  l_topmid2:
+    subtype: matrix
+    number: c-a2-b0-4:r-a2-b1-2
+    label: right middle top lane
+    tags: gi
+  l_ball5:
+    subtype: matrix
+    number: c-a2-b0-4:r-a2-b1-3
+    label: ball 5
+    tags:
+  l_ball12:
+    subtype: matrix
+    number: c-a2-b0-4:r-a2-b1-4
+    label: ball 12
+    tags:
+  l_ltmid1k:
+    subtype: matrix
+    number: c-a2-b0-5:r-a2-b1-0
+    label: right middle lane 1,000 light
+    tags:
+  l_popbumper:
+    subtype: matrix
+    number: c-a2-b0-5:r-a2-b1-1
+    label: popbumper
+    tags: gi
+  l_toprtlane:
+    subtype: matrix
+    number: c-a2-b0-5:r-a2-b1-2
+    label: right top lane
+    tags: gi
+  l_ball6:
+    subtype: matrix
+    number: c-a2-b0-5:r-a2-b1-3
+    label: ball 6
+    tags:
+  l_ball13:
+    subtype: matrix
+    number: c-a2-b0-5:r-a2-b1-4
+    label: ball 13
+    tags:
+  l_ltspecial:
+    subtype: matrix
+    number: c-a2-b0-6:r-a2-b1-0
+    label: left special light
+    tags:
+  l_rtspecial:
+    subtype: matrix
+    number: c-a2-b0-6:r-a2-b1-1
+    label: right special light
+    tags:
+  l_eightball500:
+    subtype: matrix
+    number: c-a2-b0-6:r-a2-b1-2
+    label: top 8-ball 500pt light
+    tags:
+  l_ball7:
+    subtype: matrix
+    number: c-a2-b0-6:r-a2-b1-3
+    label: ball 7
+    tags:
+  l_ball14:
+    subtype: matrix
+    number: c-a2-b0-6:r-a2-b1-4
+    label: ball 14
+    tags:
+  l_midplastic:
+    subtype: matrix
+    number: c-a2-b0-7:r-a2-b1-0
+    label: under plastic in front of popbumper
+    tags: gi
+  l_eightballhole:
+    subtype: matrix
+    number: c-a2-b0-7:r-a2-b1-1
+    label: under 8-ball kickout hole
+    tags:
+  l_coindoor:
+    subtype: matrix
+    number: c-a2-b0-7:r-a2-b1-2
+    label: coin door
+    tags: gi
+  l_ball15:
+    subtype: matrix
+    number: c-a2-b0-7:r-a2-b1-4
+    label: ball 15
+    tags:
+
+#        ::::::::   :::::::: ::::::::::: :::        ::::::::
+#      :+:    :+: :+:    :+:    :+:     :+:       :+:    :+:
+#     +:+        +:+    +:+    +:+     +:+       +:+
+#    +#+        +#+    +:+    +#+     +#+       +#++:++#++
+#   +#+        +#+    +#+    +#+     +#+              +#+
+#  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
+#  ########   ######## ########### ########## ########
+
+coils:
+  c_flipperleftmain:   # 0a0
+    number: a0-b0-0
+    default_pulse_ms: 50
+    default_hold_power: .12
+  c_flipperrightmain:   # 0a1
+    number: a0-b0-1
+    default_pulse_ms: 60
+    default_hold_power: .12
+  c_gamecounter:
+    number: a0-b0-2
+    default_pulse_ms: 10
+  c_knocker:
+    number: a0-b0-3
+    default_pulse_ms: 20
+    pulse_events: collect_special
+  c_chime1:
+    number: a0-b0-4
+    default_pulse_ms: 30
+  c_chime2:
+    number: a0-b0-5
+    default_pulse_ms: 30
+  c_chime3:
+    number: a0-b0-6
+    default_pulse_ms: 30
+  c_trougheject:   # 0a7
+    number: a0-b0-7
+    default_pulse_ms: 35
+  c_diverter:
+    number: a0-b1-0
+    default_pulse_ms: 125
+    default_hold_power: .2
+    enable_events: sw_open_diverter
+    disable_events: ball_ending, sw_plungerlane
+  c_popbumper:
+    number: a0-b1-1
+    default_pulse_ms: 18
+  c_eightballeject:
+    number: a0-b1-2
+    default_pulse_ms: 30
+  c_creditadd:
+    number: a0-b1-3
+    default_pulse_ms: 26
+  c_creditsubtract:
+    number: a0-b1-4
+    default_pulse_ms: 20
+  c_leftsling:
+    number: a0-b1-5
+    default_pulse_ms: 150
+  c_rightsling:
+    number: a0-b1-6
+    default_pulse_ms: 150
+  c_player1_10:
+    number: a1-b0-0
+    default_pulse_ms: 120
+  c_player1_100:
+    number: a1-b0-1
+    default_pulse_ms: 120
+  c_player1_1k:
+    number: a1-b0-2
+    default_pulse_ms: 120
+  c_player1_10k:
+    number: a1-b0-3
+    default_pulse_ms: 120
+  c_player2_10:
+    number: a1-b0-4
+    default_pulse_ms: 120
+  c_player2_100:
+    number: a1-b0-5
+    default_pulse_ms: 120
+  c_player2_1k:
+    number: a1-b0-6
+    default_pulse_ms: 120
+  c_player2_10k:
+    number: a1-b0-7
+    default_pulse_ms: 120
+  c_rightbankreset1:
+    number: a1-b1-0
+    default_pulse_ms: 22     #22
+  c_rightbankreset2:
+    number: a1-b1-1
+    default_pulse_ms: 22     #22
+  c_leftbankreset1:
+    number: a1-b1-2
+    default_pulse_ms: 22     #22
+  c_leftbankreset2:
+    number: a1-b1-3
+    default_pulse_ms: 22     #22
+
+#        :::::::::      :::     :::        :::
+#       :+:    :+:   :+: :+:   :+:        :+:
+#      +:+    +:+  +:+   +:+  +:+        +:+
+#     +#++:++#+  +#++:++#++: +#+        +#+
+#    +#+    +#+ +#+     +#+ +#+        +#+
+#   #+#    #+# #+#     #+# #+#        #+#
+#  #########  ###     ### ########## ##########
+
+#        :::::::::  :::::::::: :::     ::: ::::::::::: ::::::::  :::::::::: ::::::::
+#       :+:    :+: :+:        :+:     :+:     :+:    :+:    :+: :+:       :+:    :+:
+#      +:+    +:+ +:+        +:+     +:+     +:+    +:+        +:+       +:+
+#     +#+    +:+ +#++:++#   +#+     +:+     +#+    +#+        +#++:++#  +#++:++#++
+#    +#+    +#+ +#+         +#+   +#+      +#+    +#+        +#+              +#+
+#   #+#    #+# #+#          #+#+#+#       #+#    #+#    #+# #+#       #+#    #+#
+#  #########  ##########     ###     ########### ########  ########## ########
+
+ball_devices:
+  bd_trough:
+    tags: drain, trough, home
+    ball_switches: s_drain
+    eject_coil: c_trougheject
+    entrance_count_delay: 0.3s
+    confirm_eject_type: target
+    eject_targets: playfield
+
+  bd_eightballhole:
+    ball_switches: s_eightballholeeject
+    eject_coil: c_eightballeject
+    entrance_count_delay: 0.1s
+    exit_count_delay: 0.1s
+    tags: eightball
+
+#        :::::::::  :::            :::   :::   ::: :::::::::: ::::::::::: :::::::::: :::        :::::::::   ::::::::
+#       :+:    :+: :+:          :+: :+: :+:   :+: :+:            :+:     :+:        :+:        :+:    :+: :+:    :+:
+#      +:+    +:+ +:+         +:+   +:+ +:+ +:+  +:+            +:+     +:+        +:+        +:+    +:+ +:+
+#     +#++:++#+  +#+        +#++:++#++: +#++:   :#::+::#       +#+     +#++:++#   +#+        +#+    +:+ +#++:++#++
+#    +#+        +#+        +#+     +#+  +#+    +#+            +#+     +#+        +#+        +#+    +#+        +#+
+#   #+#        #+#        #+#     #+#  #+#    #+#            #+#     #+#        #+#        #+#    #+# #+#    #+#
+#  ###        ########## ###     ###  ###    ###        ########### ########## ########## #########   ########
+
+playfields:
+  playfield:
+    tags: default, home
+    default_source_device: bd_trough
+
+#        :::::::::: :::        ::::::::::: :::::::::  :::::::::  :::::::::: :::::::::   ::::::::
+#       :+:        :+:            :+:     :+:    :+: :+:    :+: :+:        :+:    :+: :+:    :+:
+#      +:+        +:+            +:+     +:+    +:+ +:+    +:+ +:+        +:+    +:+ +:+
+#     :#::+::#   +#+            +#+     +#++:++#+  +#++:++#+  +#++:++#   +#++:++#:  +#++:++#++
+#    +#+        +#+            +#+     +#+        +#+        +#+        +#+    +#+        +#+
+#   #+#        #+#            #+#     #+#        #+#        #+#        #+#    #+# #+#    #+#
+#  ###        ########## ########### ###        ###        ########## ###    ###  ########
+
+flippers:
+  left:
+    main_coil: c_flipperleftmain
+    activation_switch: s_flipperleft
+
+  right:
+    main_coil: c_flipperrightmain
+    activation_switch: s_flipperright
+
+#            :::     :::    ::: ::::::::::: ::::::::
+#         :+: :+:   :+:    :+:     :+:    :+:    :+:
+#       +:+   +:+  +:+    +:+     +:+    +:+    +:+
+#     +#++:++#++: +#+    +:+     +#+    +#+    +:+ +#++:++#++:++
+#    +#+     +#+ +#+    +#+     +#+    +#+    +#+
+#   #+#     #+# #+#    #+#     #+#    #+#    #+#
+#  ###     ###  ########      ###     ########
+
+#        :::::::::: ::::::::::: :::::::::  ::::::::::
+#       :+:            :+:     :+:    :+: :+:
+#      +:+            +:+     +:+    +:+ +:+
+#     :#::+::#       +#+     +#++:++#:  +#++:++#
+#    +#+            +#+     +#+    +#+ +#+
+#   #+#            #+#     #+#    #+# #+#
+#  ###        ########### ###    ### ##########
+
+#        ::::::::   :::::::: ::::::::::: :::        ::::::::
+#      :+:    :+: :+:    :+:    :+:     :+:       :+:    :+:
+#     +:+        +:+    +:+    +:+     +:+       +:+
+#    +#+        +#+    +:+    +#+     +#+       +#++:++#++
+#   +#+        +#+    +#+    +#+     +#+              +#+
+#  #+#    #+# #+#    #+#    #+#     #+#       #+#    #+#
+#  ########   ######## ########### ########## ########
+
+autofire_coils:
+  slingl:
+    coil: c_leftsling
+    switch: s_slingl
+  slingr:
+    coil: c_rightsling
+    switch: s_slingr
+  popbumper:
+    coil: c_popbumper
+    switch: s_popbumper
+
+#        ::::::::   ::::::::   ::::::::  :::::::::  ::::::::::
+#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:
+#     +:+        +:+        +:+    +:+ +:+    +:+ +:+
+#    +#++:++#++ +#+        +#+    +:+ +#++:++#:  +#++:++#
+#          +#+ +#+        +#+    +#+ +#+    +#+ +#+
+#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#
+#  ########   ########   ########  ###    ### ##########
+
+#        :::::::::  :::::::::: :::::::::: :::        ::::::::
+#       :+:    :+: :+:        :+:        :+:       :+:    :+:
+#      +:+    +:+ +:+        +:+        +:+       +:+
+#     +#++:++#:  +#++:++#   +#++:++#   +#+       +#++:++#++
+#    +#+    +#+ +#+        +#+        +#+              +#+
+#   #+#    #+# #+#        #+#        #+#       #+#    #+#
+#  ###    ### ########## ########## ########## ########
+
+score_reels:
+  score_1p_10k:
+    coil_inc: c_player1_10k
+    switch_0: s_score_1p_10k_0
+    switch_5: s_score_1p_10k_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_1p_1k:
+    coil_inc: c_player1_1k
+    switch_0: s_score_1p_1k_0
+    switch_5: s_score_1p_1k_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_1p_100:
+    coil_inc: c_player1_100
+    switch_0: s_score_1p_100_0
+    switch_9: s_score_1p_100_9
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_1p_10:
+    coil_inc: c_player1_10
+    switch_0: s_score_1p_10_0
+    switch_5: s_score_1p_10_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_2p_10k:
+    coil_inc: c_player2_10k
+    switch_0: s_score_2p_10k_0
+    switch_5: s_score_2p_10k_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_2p_1k:
+    coil_inc: c_player2_1k
+    switch_0: s_score_2p_1k_0
+    switch_5: s_score_2p_1k_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_2p_100:
+    coil_inc: c_player2_100
+    switch_0: s_score_2p_100_0
+    switch_9: s_score_2p_100_9
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  score_2p_10:
+    coil_inc: c_player2_10
+    switch_0: s_score_2p_10_0
+    switch_5: s_score_2p_10_5
+    limit_hi: 9
+    limit_lo: 0
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+  credit_reel:
+    coil_inc: c_creditadd
+#    coil_dec: c_creditsubtract todo DOES NOT EXIST IN CODE
+    switch_0: s_creditwheel_zero
+    switch_12: s_creditwheel_max
+    limit_lo: 0
+    limit_hi: 12
+    repeat_pulse_time: 100ms
+    hw_confirm_time: 20ms
+
+#        ::::::::   ::::::::   ::::::::  :::::::::  ::::::::::
+#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:
+#     +:+        +:+        +:+    +:+ +:+    +:+ +:+
+#    +#++:++#++ +#+        +#+    +:+ +#++:++#:  +#++:++#
+#          +#+ +#+        +#+    +#+ +#+    +#+ +#+
+#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#
+#  ########   ########   ########  ###    ### ##########
+
+#        :::::::::  :::::::::: :::::::::: :::
+#       :+:    :+: :+:        :+:        :+:
+#      +:+    +:+ +:+        +:+        +:+
+#     +#++:++#:  +#++:++#   +#++:++#   +#+
+#    +#+    +#+ +#+        +#+        +#+
+#   #+#    #+# #+#        #+#        #+#
+#  ###    ### ########## ########## ##########
+
+#        ::::::::  :::::::::   ::::::::  :::    ::: :::::::::   ::::::::
+#      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+#     +:+        +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+ +:+
+#    :#:        +#++:++#:  +#+    +:+ +#+    +:+ +#++:++#+  +#++:++#++
+#   +#+   +#+# +#+    +#+ +#+    +#+ +#+    +#+ +#+               +#+
+#  #+#    #+# #+#    #+# #+#    #+# #+#    #+# #+#        #+#    #+#
+#  ########  ###    ###  ########   ########  ###         ########
+
+score_reel_groups:
+  player1:
+    reels: score_1p_10k, score_1p_1k, score_1p_100, score_1p_10, none
+    tags: player1
+    lights_tag: player1
+    #max_simultaneous_coils: 2
+    chimes: none, c_chime1, c_chime2, c_chime3, none
+        #confirm: lazy  # strict, lazy, or none
+  player2:
+    reels: score_2p_10k, score_2p_1k, score_2p_100, score_2p_10, none
+    tags: player2
+    lights_tag: player2
+    #max_simultaneous_coils: 2
+    chimes: none, c_chime1, c_chime2, c_chime3, none
+        #confirm: strict  # strict, lazy, or none
+
+#        :::::::::  :::::::::   ::::::::  :::::::::
+#       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+#      +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+
+#     +#+    +:+ +#++:++#:  +#+    +:+ +#++:++#+
+#    +#+    +#+ +#+    +#+ +#+    +#+ +#+
+#   #+#    #+# #+#    #+# #+#    #+# #+#
+#  #########  ###    ###  ########  ###
+
+#    ::::::::::: :::     :::::::::   ::::::::  :::::::::: ::::::::::: ::::::::
+#       :+:   :+: :+:   :+:    :+: :+:    :+: :+:            :+:    :+:    :+:
+#      +:+  +:+   +:+  +:+    +:+ +:+        +:+            +:+    +:+
+#     +#+ +#++:++#++: +#++:++#:  :#:        +#++:++#       +#+    +#++:++#++
+#    +#+ +#+     +#+ +#+    +#+ +#+   +#+# +#+            +#+           +#+
+#   #+# #+#     #+# #+#    #+# #+#    #+# #+#            #+#    #+#    #+#
+#  ### ###     ### ###    ###  ########  ##########     ###     ########
+
+drop_targets:
+  drop1:
+    switch: s_drop1
+  drop2:
+    switch: s_drop2
+  drop3:
+    switch: s_drop3
+  drop4:
+    switch: s_drop4
+  drop5:
+    switch: s_drop5
+  drop6:
+    switch: s_drop6
+  drop7:
+    switch: s_drop7
+  drop9:
+    switch: s_drop9
+  drop10:
+    switch: s_drop10
+  drop11:
+    switch: s_drop11
+  drop12:
+    switch: s_drop12
+  drop13:
+    switch: s_drop13
+  drop14:
+    switch: s_drop14
+  drop15:
+    switch: s_drop15
+
+#        :::::::::  :::::::::   ::::::::  :::::::::
+#       :+:    :+: :+:    :+: :+:    :+: :+:    :+:
+#      +:+    +:+ +:+    +:+ +:+    +:+ +:+    +:+
+#     +#+    +:+ +#++:++#:  +#+    +:+ +#++:++#+
+#    +#+    +#+ +#+    +#+ +#+    +#+ +#+
+#   #+#    #+# #+#    #+# #+#    #+# #+#
+#  #########  ###    ###  ########  ###
+
+#    ::::::::::: :::     :::::::::   ::::::::  :::::::::: :::::::::::
+#       :+:   :+: :+:   :+:    :+: :+:    :+: :+:            :+:
+#      +:+  +:+   +:+  +:+    +:+ +:+        +:+            +:+
+#     +#+ +#++:++#++: +#++:++#:  :#:        +#++:++#       +#+
+#    +#+ +#+     +#+ +#+    +#+ +#+   +#+# +#+            +#+
+#   #+# #+#     #+# #+#    #+# #+#    #+# #+#            #+#
+#  ### ###     ### ###    ###  ########  ##########     ###
+
+#        :::::::::      :::     ::::    ::: :::    ::: ::::::::
+#       :+:    :+:   :+: :+:   :+:+:   :+: :+:   :+: :+:    :+:
+#      +:+    +:+  +:+   +:+  :+:+:+  +:+ +:+  +:+  +:+
+#     +#++:++#+  +#++:++#++: +#+ +:+ +#+ +#++:++   +#++:++#++
+#    +#+    +#+ +#+     +#+ +#+  +#+#+# +#+  +#+         +#+
+#   #+#    #+# #+#     #+# #+#   #+#+# #+#   #+# #+#    #+#
+#  #########  ###     ### ###    #### ###    ### ########
+
+drop_target_banks:
+  solids:
+    drop_targets: drop1, drop2, drop3, drop4, drop5, drop6, drop7
+    reset_coils: c_leftbankreset1, c_leftbankreset2
+    reset_events:
+      ball_starting: 0
+      collect_special: .75s
+  stripes:
+    drop_targets: drop9, drop10, drop11, drop12, drop13, drop14, drop15
+    reset_coils: c_rightbankreset1, c_rightbankreset2
+    reset_events:
+      ball_starting: 0.25s
+      collect_special: 1s
+
+#        ::::::::: ::::::::::: :::     ::: :::::::::: ::::::::: ::::::::::: :::::::::: :::::::::   ::::::::
+#       :+:    :+:    :+:     :+:     :+: :+:        :+:    :+:    :+:     :+:        :+:    :+: :+:    :+:
+#      +:+    +:+    +:+     +:+     +:+ +:+        +:+    +:+    +:+     +:+        +:+    +:+ +:+
+#     +#+    +:+    +#+     +#+     +:+ +#++:++#   +#++:++#:     +#+     +#++:++#   +#++:++#:  +#++:++#++
+#    +#+    +#+    +#+      +#+   +#+  +#+        +#+    +#+    +#+     +#+        +#+    +#+        +#+
+#   #+#    #+#    #+#       #+#+#+#   #+#        #+#    #+#    #+#     #+#        #+#    #+# #+#    #+#
+#  ######### ###########     ###     ########## ###    ###    ###     ########## ###    ###  ########
+
+diverters:
+   rightoutlane:
+       activation_coil: c_diverter
+       type: hold
+       enable_events: open_diverter
+       disable_events: ball_ending, s_plungerlane_active, close_diverter
+
+#        ::::::::::: ::::    ::: :::::::::: ::::::::
+#           :+:     :+:+:   :+: :+:       :+:    :+:
+#          +:+     :+:+:+  +:+ +:+       +:+    +:+
+#         +#+     +#+ +:+ +#+ :#::+::#  +#+    +:+
+#        +#+     +#+  +#+#+# +#+       +#+    +#+
+#       #+#     #+#   #+#+# #+#       #+#    #+#
+#  ########### ###    #### ###        ########
+
+#        :::        ::::::::::: ::::::::  :::    ::: ::::::::::: ::::::::
+#       :+:            :+:    :+:    :+: :+:    :+:     :+:    :+:    :+:
+#      +:+            +:+    +:+        +:+    +:+     +:+    +:+
+#     +#+            +#+    :#:        +#++:++#++     +#+    +#++:++#++
+#    +#+            +#+    +#+   +#+# +#+    +#+     +#+           +#+
+#   #+#            #+#    #+#    #+# #+#    #+#     #+#    #+#    #+#
+#  ########## ########### ########  ###    ###     ###     ########
+
+info_lights:
+  match_00:
+    light: l_match00
+  match_10:
+    light: l_match10
+  match_20:
+    light: l_match20
+  match_30:
+    light: l_match30
+  match_40:
+    light: l_match40
+  match_50:
+    light: l_match50
+  match_60:
+    light: l_match60
+  match_70:
+    light: l_match70
+  match_80:
+    light: l_match80
+  match_90:
+    light: l_match90
+  ball_1:
+    light: l_bip1
+  ball_2:
+    light: l_bip2
+  ball_3:
+    light: l_bip3
+  ball_4:
+    light: l_bip4
+  ball_5:
+    light: l_bip5
+  player_1:
+    light: l_player1
+  player_2:
+    light: l_player2
+  tilt:
+    light: l_tilt
+  game_over:
+    light: l_gameover
+
+#        :::::::::      :::     :::        :::
+#       :+:    :+:   :+: :+:   :+:        :+:
+#      +:+    +:+  +:+   +:+  +:+        +:+
+#     +#++:++#+  +#++:++#++: +#+        +#+
+#    +#+    +#+ +#+     +#+ +#+        +#+
+#   #+#    #+# #+#     #+# #+#        #+#
+#  #########  ###     ### ########## ##########
+#        ::::::::      :::     :::     ::: :::::::::: ::::::::
+#      :+:    :+:   :+: :+:   :+:     :+: :+:       :+:    :+:
+#     +:+         +:+   +:+  +:+     +:+ +:+       +:+
+#    +#++:++#++ +#++:++#++: +#+     +:+ +#++:++#  +#++:++#++
+#          +#+ +#+     +#+  +#+   +#+  +#+              +#+
+#  #+#    #+# #+#     #+#   #+#+#+#   #+#       #+#    #+#
+#  ########  ###     ###     ###     ########## ########
+
+ball_saves:
+   default:
+       active_time: 10s
+       grace_period: 1s
+       balls_to_save: 1
+       enable_events: sw_plungerlane
+
+#        :::    ::: :::::::::: :::   ::: :::::::::   ::::::::      :::     :::::::::  :::::::::
+#       :+:   :+:  :+:        :+:   :+: :+:    :+: :+:    :+:   :+: :+:   :+:    :+: :+:    :+:
+#      +:+  +:+   +:+         +:+ +:+  +:+    +:+ +:+    +:+  +:+   +:+  +:+    +:+ +:+    +:+
+#     +#++:++    +#++:++#     +#++:   +#++:++#+  +#+    +:+ +#++:++#++: +#++:++#:  +#+    +:+
+#    +#+  +#+   +#+           +#+    +#+    +#+ +#+    +#+ +#+     +#+ +#+    +#+ +#+    +#+
+#   #+#   #+#  #+#           #+#    #+#    #+# #+#    #+# #+#     #+# #+#    #+# #+#    #+#
+#  ###    ### ##########    ###    #########   ########  ###     ### ###    ### #########
+
+keyboard:
+  z:
+    switch: s_flipperleft
+  /:
+    switch: s_flipperright
+  s:
+    switch: s_startbutton
+  q:
+    switch: s_drain
+    toggle: true
+    start_active: true
+  w:
+    switch: s_draineject
+  e:
+    switch: s_plungerlane
+  r:
+    switch: s_eightballholeeject
+  x:
+    switch: s_slingl
+  period:
+    switch: s_slingr
+  1:
+    switch: s_score_1p_10k_0
+    toggle: true
+    start_active: true
+  shift-1:
+    switch: s_score_1p_10k_5
+    toggle: true
+    start_active: false
+  2:
+    switch: s_score_1p_1k_0
+    toggle: true
+    start_active: true
+  shift-2:
+    switch: s_score_1p_1k_5
+    toggle: true
+    start_active: false
+  3:
+    switch: s_score_1p_100_0
+    toggle: true
+    start_active: true
+  shift-3:
+    switch: s_score_1p_100_9
+    toggle: true
+    start_active: false
+  4:
+    switch: s_score_1p_10_0
+    toggle: true
+    start_active: true
+  shift-4:
+    switch: s_score_1p_10_5
+    toggle: true
+    start_active: false
+  5:
+    switch: s_score_2p_10k_0
+    toggle: true
+    start_active: true
+  shift-5:
+    switch: s_score_2p_10k_5
+    toggle: true
+    start_active: false
+  6:
+    switch: s_score_2p_1k_0
+    toggle: true
+    start_active: true
+  shift-6:
+    switch: s_score_2p_1k_5
+    toggle: true
+    start_active: false
+  7:
+    switch: s_score_2p_100_0
+    toggle: true
+    start_active: true
+  shift-7:
+    switch: s_score_2p_100_9
+    toggle: true
+    start_active: false
+  8:
+    switch: s_score_2p_10_0
+    toggle: true
+    start_active: true
+  shift-8:
+    switch: s_score_2p_10_5
+    toggle: true
+    start_active: false
+  9:
+    switch: s_classic_mode
+    toggle: true
+    start_active: true
+  b:
+    event: coil_test
+    params:
+      coil_name: chime1
+  n:
+    event: coil_test
+    params:
+      coil_name: chime2
+  m:
+    event: coil_test
+    params:
+      coil_name: chime3
+  o:
+    event: reload_and_play_show
+    params:
+      dummy: true
+
+#       ::::::::  :::        ::::::::::: :::::::::  :::::::::: ::::::::
+#     :+:    :+: :+:            :+:     :+:    :+: :+:       :+:    :+:
+#    +:+        +:+            +:+     +:+    +:+ +:+       +:+
+#   +#++:++#++ +#+            +#+     +#+    +:+ +#++:++#  +#++:++#++
+#         +#+ +#+            +#+     +#+    +#+ +#+              +#+
+# #+#    #+# #+#            #+#     #+#    #+# #+#       #+#    #+#
+# ########  ########## ########### #########  ########## ########
+
+slides:
+  the_slide:
+    - type: text
+      text: (player1|score)
+        #font: medium
+      number_grouping: true
+      min_digits: 2
+      anchor_y: top
+      anchor_x: left
+      x: right-60
+      y: top-2
+    - type: text
+      text: (player2|score)
+      #style: medium
+      anchor_y: top
+      anchor_x: right
+      number_grouping: true
+      min_digits: 2
+      x: right-2
+      y: top-2
+
+#        ::::::::  :::        ::::::::::: :::::::::  ::::::::::
+#      :+:    :+: :+:            :+:     :+:    :+: :+:
+#     +:+        +:+            +:+     +:+    +:+ +:+
+#    +#++:++#++ +#+            +#+     +#+    +:+ +#++:++#
+#          +#+ +#+            +#+     +#+    +#+ +#+
+#  #+#    #+# #+#            #+#     #+#    #+# #+#
+#  ########  ########## ########### #########  ##########
+#        :::::::::  :::            :::   :::   ::: :::::::::: :::::::::
+#       :+:    :+: :+:          :+: :+: :+:   :+: :+:        :+:    :+:
+#      +:+    +:+ +:+         +:+   +:+ +:+ +:+  +:+        +:+    +:+
+#     +#++:++#+  +#+        +#++:++#++: +#++:   +#++:++#   +#++:++#:
+#    +#+        +#+        +#+     +#+  +#+    +#+        +#+    +#+
+#   #+#        #+#        #+#     #+#  #+#    #+#        #+#    #+#
+#  ###        ########## ###     ###  ###    ########## ###    ###
+
+slide_player:
+  machine_reset_phase_3: the_slide

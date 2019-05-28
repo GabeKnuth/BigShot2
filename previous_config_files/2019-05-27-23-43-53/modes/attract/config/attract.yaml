@@ -1,0 +1,26 @@
+#config_version=5
+
+show_player:
+  mode_attract_started:
+    backbox_show:
+      loops: -1
+    playfield_show:
+      loops: -1
+    pop_8_alternate:
+      loops: -1
+    top_lanes_sweep:
+      loops: -1
+    mid_lights_bounce:
+      loops: -1
+
+  mode_attract_stopped:
+    backbox_show:
+      action: stop
+    playfield_show:
+      action: stop
+    pop_8_alternate:
+      action: stop
+    top_lanes_sweep:
+      action: stop
+    mid_lights_bounce:
+      action: stop

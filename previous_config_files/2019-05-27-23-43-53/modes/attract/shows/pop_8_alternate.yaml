@@ -1,0 +1,9 @@
+#show_version=5
+- duration: 4
+  lights:
+    l_eightball500: ff
+    l_popbumper: 0
+- duration: 4
+  lights:
+    l_popbumper: ff
+    l_eightball500: 0

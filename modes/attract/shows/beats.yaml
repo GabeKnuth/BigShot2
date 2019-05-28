@@ -1,0 +1,186 @@
+#show_version=5
+
+# maybe play at 8 tps?
+- duration: 4
+  lights:
+    l_rtbank1: 00
+    l_rtbank2: 00
+    l_ltsling: 00
+    l_rtsling: 00
+    l_ltbank1: 00
+    l_ltbank2: 00
+    l_popbumper: 00
+    # l_rtbank1: ff
+    # l_rtbank2: ff
+  coils:
+    c_rightbankreset1: pulse
+    c_rightbankreset2: pulse
+- duration: 2
+  lights:
+    l_rtbank1: 00
+    l_rtbank2: 00
+    l_popbumper: ff
+  coils:
+    c_popbumper: pulse
+- duration: 4
+  lights:
+    l_popbumper: 00
+    l_ltbank1: ff
+    l_ltbank2: ff
+  coils:
+    c_leftbankreset1: pulse
+    c_leftbankreset2: pulse
+- duration: 2
+  lights:
+    l_ltbank1: 00
+    l_ltbank2: 00
+    l_rtbank1: ff
+    l_rtbank2: ff
+  coils:
+    c_rightbankreset1: pulse
+    c_rightbankreset2: pulse
+- duration: 4
+  lights:
+    l_rtbank1: 00
+    l_rtbank2: 00
+    l_popbumper: ff
+  coils:
+    c_popbumper: pulse
+- duration: 2
+  lights:
+    l_popbumper: 00
+    l_ltbank1: ff
+    l_ltbank2: ff
+  coils:
+    c_leftbankreset1: pulse
+    c_leftbankreset2: pulse
+- duration: 4
+  lights:
+    l_ltbank1: 00
+    l_ltbank2: 00
+    l_rtbank1: ff
+    l_rtbank2: ff
+  coils:
+    c_rightbankreset1: pulse
+    c_rightbankreset2: pulse
+- duration: 2
+  lights:
+    l_rtbank1: 00
+    l_rtbank2: 00
+    l_popbumper: ff
+  coils:
+    c_popbumper: pulse
+- duration: 4
+  lights:
+    l_popbumper: 00
+    l_ltbank1: ff
+    l_ltbank2: ff
+  coils:
+    c_leftbankreset1: pulse
+    c_leftbankreset2: pulse
+- duration: 2
+  lights:
+    l_ltbank1: 00
+    l_ltbank2: 00
+    l_rtbank1: ff
+    l_rtbank2: ff
+  coils:
+    c_rightbankreset1: pulse
+    c_rightbankreset2: pulse
+- duration: 4
+  lights:
+    l_rtbank1: 00
+    l_rtbank2: 00
+    l_popbumper: ff
+  coils:
+    c_popbumper: pulse
+- duration: 1
+  lights:
+    l_popbumper: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
+- duration: 1
+  lights:
+    l_ltsling: 00
+    l_rtsling: ff
+  coils:
+    c_flipperrightmain: pulse
+- duration: 1
+  lights:
+    l_rtsling: 00
+    l_ltsling: ff
+  coils:
+    c_flipperleftmain: pulse
