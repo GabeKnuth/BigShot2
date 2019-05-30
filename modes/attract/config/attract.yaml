@@ -6,19 +6,25 @@ show_player:
   mode_attract_started:
     backbox_show:
       loops: -1
-      speed: 8
+      speed: 4
+      priority: 11
     playfield_show:
       loops: -1
       speed: 2
+      priority: 11
     pop_8_alternate:
       loops: -1
-      speed: 8
+      speed: 6
+      priority: 11
     top_lanes_sweep:
       loops: -1
-      speed: 8
+      speed: 6
+      priority: 11
     mid_lights_bounce:
       loops: -1
-      speed: 8
+      speed: 6
+      priority: 11
+    gi_on: {}
 
   mode_attract_stopped:
     backbox_show:
@@ -30,4 +36,14 @@ show_player:
     top_lanes_sweep:
       action: stop
     mid_lights_bounce:
+      action: stop
+
+  s_classic_mode_active:
+    classic_overlay:
+      loops: -1
+      speed: 4
+      priority: 12
+
+  s_classic_mode_inactive:
+    classic_overlay:
       action: stop

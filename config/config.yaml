@@ -38,6 +38,25 @@ game:
   balls_per_game: 5
   max_players: 2
 
+virtual_platform_start_active_switches:
+    - s_score_1p_10_0
+    - s_score_1p_100_0
+    - s_score_1p_1k_0
+    - s_score_1p_10k_0
+    - s_score_2p_10_0
+    - s_score_2p_100_0
+    - s_score_2p_1k_0
+    - s_score_2p_10k_0
+    
+# logging:
+#   file:
+#     switch_controller: full
+#     event_manager: full
+
+mpf:
+  auto_create_switch_events: True
+
+
 #scriptlets: classic_modern_switcher.classicmodern attract.attract
     #game.game
     #bonus.bonus
@@ -170,6 +189,7 @@ switches:
   s_classic_mode:
     number: SD19
     label: switches between modern (inactive) and classic (active) modes
+    tags: classic_mode
 # removed to make room for classic mode switch. leaving here as a placeholder.
 #    credit1:
 #        number: SD19
@@ -809,34 +829,34 @@ coils:
     default_pulse_ms: 20
   c_leftsling:
     number: a0-b1-5
-    default_pulse_ms: 150
+    default_pulse_ms: 100
   c_rightsling:
     number: a0-b1-6
-    default_pulse_ms: 150
+    default_pulse_ms: 100
   c_player1_10:
     number: a1-b0-0
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player1_100:
     number: a1-b0-1
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player1_1k:
     number: a1-b0-2
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player1_10k:
     number: a1-b0-3
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player2_10:
     number: a1-b0-4
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player2_100:
     number: a1-b0-5
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player2_1k:
     number: a1-b0-6
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_player2_10k:
     number: a1-b0-7
-    default_pulse_ms: 120
+    default_pulse_ms: 50
   c_rightbankreset1:
     number: a1-b1-0
     default_pulse_ms: 22     #22
@@ -1036,15 +1056,15 @@ score_reels:
     repeat_pulse_time: 100ms
     hw_confirm_time: 20ms
 
-  credit_reel:
-    coil_inc: c_creditadd
-#    coil_dec: c_creditsubtract todo DOES NOT EXIST IN CODE
-    switch_0: s_creditwheel_zero
-    switch_12: s_creditwheel_max
-    limit_lo: 0
-    limit_hi: 12
-    repeat_pulse_time: 100ms
-    hw_confirm_time: 20ms
+#   credit_reel:
+#     coil_inc: c_creditadd
+# #    coil_dec: c_creditsubtract todo DOES NOT EXIST IN CODE
+#     switch_0: s_creditwheel_zero
+#     switch_12: s_creditwheel_max
+#     limit_lo: 0
+#     limit_hi: 12
+#     repeat_pulse_time: 100ms
+#     hw_confirm_time: 20ms
 
 #        ::::::::   ::::::::   ::::::::  :::::::::  ::::::::::
 #      :+:    :+: :+:    :+: :+:    :+: :+:    :+: :+:
@@ -1423,3 +1443,18 @@ slides:
 
 slide_player:
   machine_reset_phase_3: the_slide
+
+#        ::::::::  :::    :::  ::::::::  :::       :::  ::::::::
+#      :+:    :+: :+:    :+: :+:    :+: :+:       :+: :+:    :+:
+#     +:+        +:+    +:+ +:+    +:+ +:+       +:+ +:+
+#    +#++:++#++ +#++:++#++ +#+    +:+ +#+  +:+  +#+ +#++:++#++
+#          +#+ +#+    +#+ +#+    +#+ +#+ +#+#+ +#+        +#+
+#  #+#    #+# #+#    #+# #+#    #+#  #+#+# #+#+#  #+#    #+#
+#  ########  ###    ###  ########    ###   ###    ########
+
+
+shows:
+    gi_on:
+    - duration: -1
+      lights:
+        gi: on

@@ -291,6 +291,7 @@
     l_midbody1: 00
     l_midbody2: 00
     l_player2_10k: 00
+    l_ltbody: 00
 - duration: .25s
   lights:
     l_bip1: ff
@@ -350,6 +351,7 @@
     l_midbody1: ff
     l_midbody2: ff
     l_player2_10k: ff
+    l_ltbody: ff
 - duration: .25s
   lights:
     l_player2_10k: 00
@@ -365,10 +367,10 @@
 - duration: .25s
   lights:
     l_guyshair: 00
-    l_ltbody: 00
     l_ltleg: 00
     l_match30: 00
     l_match20: 00
+    l_ltbody: 00
     l_match60: ff
     l_gameover: ff
     l_o_t: ff
